@@ -6,9 +6,4 @@
 #include <stdint.h>
 
 int _printf(const char *format, ...);
-{
-int main()
-int len;
-int len2;
-}
 #endif /* MAIN_H */

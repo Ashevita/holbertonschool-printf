@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <stdarg.h>
+#include "main.h"
 
 int _printf(const char *format, ...)
 {
@@ -42,5 +43,5 @@ int _printf(const char *format, ...)
 		p++;
 	}
 	va_end(args);
-	return count;
+	return (count);
 }
