@@ -3,6 +3,6 @@
 
 int print_char(va_list args)
 {
-    putchar(va_arg(args, int));
+    _putchar(va_arg(args, int));
     return 1;
 }

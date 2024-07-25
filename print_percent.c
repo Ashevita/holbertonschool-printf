@@ -4,6 +4,6 @@
 int print_percent(va_list args)
 {
     (void)args; /* Avoid unused parameter warning */
-    putchar('%');
+    _putchar('%');
     return 1;
 }

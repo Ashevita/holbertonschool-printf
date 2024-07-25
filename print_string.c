@@ -7,7 +7,7 @@ int print_string(va_list args)
     int count = 0;
     while (*str)
     {
-        putchar(*str++);
+        _putchar(*str++);
         count++;
     }
     return count;

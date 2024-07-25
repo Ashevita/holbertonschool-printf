@@ -23,14 +23,14 @@ int _printf(const char *format, ...)
             }
             else
             {
-                putchar('%');
-                putchar(*p);
-                count += 2;
+                _putchar('%');
+                _putchar(*p);
+                _count += 2;
             }
         }
         else
         {
-            putchar(*p);
+            _putchar(*p);
             count++;
         }
     }
