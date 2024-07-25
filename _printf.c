@@ -1,41 +1,40 @@
 #include "main.h"
 #include <stdio.h>
-#include <uintptr_t>
+#include <stdarg.h>
 
 int _printf(const char *format, ...)
 {
     va_list args;
-    va_start(args, format);
+    const char *p;
     int count = 0;
-    const char *p = format;
-    while (*p != '\0') 
+    func_t func;
+
+    va_start(args, format);
+
+    for (p = format; *p; p++)
     {
-        if (*p == '%') 
+        if (*p == '%' && *(p + 1))
         {
             p++;
-            if (*p == 'c') 
+            func = get_function(*p);
+            if (func)
             {
-                char ch = (char) va_arg(args, int);
-                putchar(ch);
-                count++;
-            } else if (*p == 's') 
-            {
-                char* str = va_arg(args, char*);
-                while (*str != '\0') 
-                {
-                    putchar(*str);
-                    str++;
-                    count++;
-                }
+                count += func(args);
             }
-        } 
-        else 
+            else
+            {
+                putchar('%');
+                putchar(*p);
+                count += 2;
+            }
+        }
+        else
         {
             putchar(*p);
             count++;
         }
-        p++;
     }
+
     va_end(args);
     return count;
 }
