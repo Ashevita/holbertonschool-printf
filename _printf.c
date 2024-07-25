@@ -25,7 +25,7 @@ int _printf(const char *format, ...)
             {
                 _putchar('%');
                 _putchar(*p);
-                _count += 2;
+                count += 2;
             }
         }
         else

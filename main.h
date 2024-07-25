@@ -5,7 +5,7 @@
 
 /* Function pointer type for handlers */
 typedef int (*func_t)(va_list args);
-
+int _putchar(char c);
 /* Structure to associate specifiers and functions */
 typedef struct {
     char specifier;
