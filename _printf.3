@@ -1,0 +1,43 @@
+.TH _PRINTF 3 "July 25, 2024" "_printf Manual" "_printf Function Documentation"
+.SH NAME
+_printf - Print formatted output to standard output.
+.SH SYNOPSIS
+.nf
+.B #include <stdio.h>
+.BI "int _printf(const char *format, ...);"
+.fi
+.SH DESCRIPTION
+.B _printf
+is a function that produces formatted output on the standard output (stdout) using the format specified in
+.I format
+and the subsequent additional arguments.
+The
+.I format
+argument is a string that contains both ordinary characters and format specifiers. Ordinary characters are directly copied to the output. Format specifiers, which start with the character '%', are replaced by the values of the subsequent arguments formatted as indicated.
+The primary format specifiers include:
+.TP
+.B %c
+A single character.
+.TP
+.B %s
+A string of characters (a sequence of characters terminated by a null character '\0').
+.TP
+.B %i, %d
+Signed decimal integer.
+.SH RETURN VALUE
+.B _printf
+returns the total number of characters written, excluding the null byte used to end output to strings. If an output error is encountered, a negative value is returned.
+.SH EXAMPLES
+.nf
+.B #include <stdio.h>
+.B
+.B int main() {
+.B     _printf("Character: %c\n", 'A');
+.B     _printf("String: %s\n", "Hello, world!");
+.B     _printf("Integer: %d\n", 42);
+.B     _printf("Integer: %i\n", -42);
+.B     return 0;
+.B }
+.fi
+.SH AUTHORS
+This man page was written by Henri, Ari and Claude.
