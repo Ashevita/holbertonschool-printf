@@ -31,3 +31,6 @@ int main() {
     _printf("Decimal: %d\n", 123);
     return 0;
 }
+## Authors
+
+This README is written by Henri and Ari.
